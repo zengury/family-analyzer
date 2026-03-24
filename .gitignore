@@ -1,0 +1,42 @@
+# 数据目录（所有用户数据）
+data/
+outputs/
+*.jsonl
+
+# 特定敏感文件
+data/raw/*.json
+data/parsed/*.jsonl
+data/denoised/*.jsonl
+data/extracted/*
+data/observations/*
+outputs/*.md
+
+# 打包文件
+dist/
+*.tgz
+*.tar.gz
+*.egg-info/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 临时文件
+*.tmp
+*.temp
+*.log
