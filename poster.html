@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #1a1a2e;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#poster {
+    width: 800px;
+    height: 800px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    position: relative;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.title {
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+.subtitle {
+    color: #888;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+.tagline {
+    color: #aaa;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+}
+.flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    gap: 10px;
+}
+.flow-box {
+    padding: 12px 24px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+.arrow {
+    color: #666;
+    font-size: 20px;
+}
+.members {
+    margin-top: 60px;
+    text-align: center;
+}
+.members-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.member-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.member {
+    text-align: center;
+}
+.member-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0 auto 10px;
+    border: 3px solid white;
+}
+.member-role {
+    color: #bbb;
+    font-size: 14px;
+}
+.insights {
+    margin-top: 60px;
+    text-align: center;
+}
+.insights-title {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.insight-item {
+    color: #999;
+    font-size: 16px;
+    margin: 10px 0;
+}
+.install {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d1117;
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 16px;
+}
+</style>
+</head>
+<body>
+<div id="poster">
+    <div class="title">伐木累分析大师</div>
+    <div class="subtitle">Family Analyzer</div>
+    <div class="tagline">微信群聊行为分析工具</div>
+    
+    <div class="flow">
+        <div class="flow-box" style="background: #e74c3c;">导入</div>
+        <div class="arrow">→</div>
+        <div class="flow-box" style="background: #f39c12;">解析</div>
+        <div class="arrow">→</div>
+        <div class="flow-box" style="background: #9b59b6;">AI分析</div>
+        <div class="arrow">→</div>
+        <div class="flow-box" style="background: #3498db;">洞察</div>
+    </div>
+    
+    <div class="members">
+        <div class="members-title">群聊成员画像</div>
+        <div class="member-row">
+            <div class="member">
+                <div class="member-circle" style="background: #e74c3c;">P1</div>
+                <div class="member-role">话题发动机</div>
+            </div>
+            <div class="member">
+                <div class="member-circle" style="background: #f39c12;">P2</div>
+                <div class="member-role">情感建筑师</div>
+            </div>
+            <div class="member">
+                <div class="member-circle" style="background: #9b59b6;">P3</div>
+                <div class="member-role">视觉叙事者</div>
+            </div>
+            <div class="member">
+                <div class="member-circle" style="background: #3498db;">P4</div>
+                <div class="member-role">捧哏担当</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="insights">
+        <div class="insights-title">核心洞察</div>
+        <div class="insight-item">• 发现共同价值观</div>
+        <div class="insight-item">• 识别互动模式</div>
+        <div class="insight-item">• 提取内部暗号</div>
+    </div>
+    
+    <div class="install">clawhub install family-analyzer</div>
+</div>
+</body>
+</html>

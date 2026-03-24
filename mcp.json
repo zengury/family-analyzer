@@ -1,0 +1,17 @@
+{
+  "name": "family-analyzer",
+  "description": "微信群聊行为分析工具 - 从聊天记录提取群体人格画像",
+  "version": "0.1.0",
+  "command": "python3",
+  "args": ["mcp_server.py"],
+  "tools": [
+    {
+      "name": "analyze_chat",
+      "description": "分析微信群聊记录，提取群体行为模式和成员画像"
+    },
+    {
+      "name": "generate_persona", 
+      "description": "为指定成员生成个人画像"
+    }
+  ]
+}
