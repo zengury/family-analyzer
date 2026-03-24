@@ -1,0 +1,37 @@
+{
+  "name": "family-analyzer",
+  "version": "0.1.0",
+  "description": "微信群聊行为分析工具 - 从聊天记录提取群体人格画像",
+  "main": "index.js",
+  "bin": {
+    "family-analyzer": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wechat",
+    "chat-analysis",
+    "group-dynamics",
+    "persona",
+    "family",
+    "聊天记录分析",
+    "群聊人格"
+  ],
+  "author": "zengury",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zengury/family-analyzer.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "pipeline/",
+    "prompts/",
+    "bin/",
+    "README.md"
+  ]
+}
