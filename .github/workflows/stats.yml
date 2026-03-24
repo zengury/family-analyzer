@@ -1,0 +1,50 @@
+name: Weekly Download Stats
+
+on:
+  schedule:
+    # 每周一早上 9 点运行
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  collect-stats:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: pip install requests
+    
+    - name: Collect stats
+      run: python3 scripts/track_downloads.py
+    
+    - name: Generate weekly report
+      run: python3 scripts/track_downloads.py --weekly-report
+    
+    - name: Commit and push stats
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add stats/
+        git diff --quiet && git diff --staged --quiet || git commit -m "Update weekly stats [$(date +%Y-%m-%d)]"
+        git push
+    
+    - name: Create issue with weekly report
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const report = fs.readFileSync('stats/weekly_report.md', 'utf8');
+          
+          github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `📊 Weekly Stats Report - ${new Date().toISOString().split('T')[0]}`,
+            body: report,
+            labels: ['stats', 'weekly-report']
+          });
