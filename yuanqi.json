@@ -1,0 +1,62 @@
+{
+  "name": "伐木累分析大师",
+  "description": "从微信群聊记录提炼群体人格画像，识别每个成员的隐藏角色",
+  "version": "0.1.0",
+  "author": "zengury",
+  "icon": "https://raw.githubusercontent.com/zengury/family-analyzer/main/poster_fun.png",
+  "homepage": "https://github.com/zengury/family-analyzer",
+  "capabilities": {
+    "chat": true,
+    "file_upload": true
+  },
+  "parameters": {
+    "api_key": {
+      "type": "string",
+      "description": "Kimi API Key",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "description": "使用模型",
+      "default": "k2p5"
+    }
+  },
+  "triggers": [
+    {
+      "type": "file",
+      "mime_types": ["application/json", "text/plain"],
+      "description": "上传微信群聊导出文件"
+    },
+    {
+      "type": "keyword",
+      "patterns": ["分析聊天记录", "群聊分析", "family analyzer", "伐木累"]
+    }
+  ],
+  "workflow": {
+    "steps": [
+      {
+        "id": "parse",
+        "name": "解析聊天记录",
+        "description": "提取发送者、时间、内容"
+      },
+      {
+        "id": "analyze",
+        "name": "AI行为分析",
+        "description": "识别成员角色和互动模式"
+      },
+      {
+        "id": "generate",
+        "name": "生成画像",
+        "description": "输出群体人格档案"
+      }
+    ]
+  },
+  "output": {
+    "type": "markdown",
+    "files": [
+      "soul.md",
+      "persona_成员1.md",
+      "persona_成员2.md"
+    ]
+  }
+}
