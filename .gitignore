@@ -40,3 +40,16 @@ Thumbs.db
 *.tmp
 *.temp
 *.log
+
+
+# Build artifacts
+dist/
+*.tgz
+*.tar.gz
+*.egg-info/
+*.whl
+
+# Internal planning docs
+LAUNCH_PLAN.md
+TASKS.md
+PRIVACY_CLEANUP.md
